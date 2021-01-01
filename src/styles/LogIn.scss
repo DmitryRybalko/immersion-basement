@@ -1,0 +1,38 @@
+.logIn-container {
+  margin-top: 16.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .LogIn-title {
+    font-family: "Oswald", sans-serif;
+    font-size: 4rem;
+  }
+
+  .about-guest {
+    p {
+      margin-top: 2rem;
+      font-size: large;
+    }
+  }
+
+  .buttons-LogIn-container {
+    display: flex;
+    flex-direction: column;
+    button {
+      margin-top: 4rem;
+      background-color: #222;
+      color: #fff;
+      cursor: pointer;
+      border: 1px solid black;
+      border-radius: 2.5rem;
+      outline: none;
+      height: 4rem;
+      width: 14rem;
+      font-size: 1.3rem;
+      &:hover {
+        background-color: #4c4c4c;
+      }
+    }
+  }
+}

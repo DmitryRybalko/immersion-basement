@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ecebe8;
+  font-family: sans-serif, Arial, Helvetica;
+}
+
+@import "navbar.scss";
+@import "main.scss";
