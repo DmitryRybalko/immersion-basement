@@ -28,7 +28,12 @@ export const authGuestURL = () =>
   `${baseUrl}/authentication/guest_session/new?api_key=05f82c4eb41cf7d38ea497c73e0da404`;
 export const getMovieTrailers = (movie_id) =>
   `${baseUrl}/movie/${movie_id}/videos?api_key=${process.env.REACT_APP_MOVIEDB_API}&language=en-US`;
-
+export const getShowTrailers = (show_id) =>
+  `${baseUrl}/tv/${show_id}/videos?api_key=${process.env.REACT_APP_MOVIEDB_API}&language=en-US`;
+export const getMovieReviews = (movie_id) =>
+  `${baseUrl}/movie/${movie_id}/reviews?api_key=${process.env.REACT_APP_MOVIEDB_API}&language=ja&page=1`;
+export const getShowReviews = (show_id) =>
+  `${baseUrl}/tv/${show_id}/reviews?api_key=${process.env.REACT_APP_MOVIEDB_API}&language=ja&page=1`;
 //en-US
 //https://api.themoviedb.org/3/movie/597094/videos?api_key=05f82c4eb41cf7d38ea497c73e0da404&language=en-US
 //https://api.themoviedb.org/3/authentication/guest_session/new?api_key=05f82c4eb41cf7d38ea497c73e0da404
