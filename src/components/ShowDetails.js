@@ -3,10 +3,14 @@ import { imgUrl } from "../util";
 import { useSelector } from "react-redux";
 import "../styles/details.scss";
 import StarRating from "./StarRating";
+import Trailer from "./Trailer";
+import ScrollContainer from "react-indiana-drag-scroll";
 
 const ShowDetails = () => {
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  const { tvShow } = useSelector((state) => state.details);
+  const { tvShow, show_trailers, show_reviews } = useSelector(
+    (state) => state.details
+  );
 
   const sectionStyle = {
     backgroundImage: `linear-gradient(337deg, rgba(2,0,36,0.7) 15%, rgba(9,121,69,0.8) 100%, rgba(0,212,255,0.7) 100%), url(${imgUrl}${tvShow.backdrop_path})`,
@@ -44,12 +48,36 @@ const ShowDetails = () => {
           <p>{tvShow.overview}</p>
         </div>
         <div className="immersion-data-container">
-          <h2 className="trailers">トレーラー</h2>
-          <p>{tvShow.overview}</p>
+          <div className="data">
+            <h2>トレーラー</h2>
+          </div>
+          <ScrollContainer className="trailer-carousel">
+            {show_trailers.results && show_trailers.results.length > 0 ? (
+              show_trailers.results.map((trailer) => (
+                <Trailer
+                  key={trailer.key}
+                  src={`https://www.youtube.com/embed/${trailer.key}`}
+                />
+              ))
+            ) : (
+              <p>トレーラーなし</p>
+            )}
+          </ScrollContainer>
         </div>
         <div className="immersion-data-container">
-          <h2 className="comments">コメント</h2>
-          <p>{tvShow.overview}</p>
+          <div className="data">
+            <h2>レビュー</h2>
+          </div>
+          {show_reviews.results && show_reviews.results.length > 0 ? (
+            show_reviews.results.map((review) => (
+              <div key={review.url} className="review-container">
+                <h3 key={review.author}>{review.author}</h3>
+                <p key={review.id}>{review.content}</p>
+              </div>
+            ))
+          ) : (
+            <p>レビューなし</p>
+          )}
         </div>
       </section>
     </>

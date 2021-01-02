@@ -8,7 +8,9 @@ import ScrollContainer from "react-indiana-drag-scroll";
 
 const MovieDetails = () => {
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  const { movie, movie_trailers } = useSelector((state) => state.details);
+  const { movie, movie_trailers, movie_reviews } = useSelector(
+    (state) => state.details
+  );
   const { guestLogged } = useSelector((state) => state.log_in);
   //const {logged_in, guestLogged} = useSelector(state => state.log_in)
 
@@ -57,7 +59,6 @@ const MovieDetails = () => {
           <div className="data">
             <h2>あらすじ</h2>
           </div>
-
           {movie.overview ? <p>{movie.overview}</p> : <p>あらすじなし</p>}
         </div>
         <div className="immersion-data-container">
@@ -79,9 +80,18 @@ const MovieDetails = () => {
         </div>
         <div className="immersion-data-container">
           <div className="data">
-            <h2>コメント</h2>
+            <h2>レビュー</h2>
           </div>
-          <p>{movie.overview}</p>
+          {movie_reviews.results && movie_reviews.results.length > 0 ? (
+            movie_reviews.results.map((review) => (
+              <div key={review.url} className="review-container">
+                <h3 key={review.author}>{review.author}</h3>
+                <p key={review.id}>{review.content}</p>
+              </div>
+            ))
+          ) : (
+            <p>レビューなし</p>
+          )}
         </div>
       </section>
     </>
