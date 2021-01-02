@@ -5,7 +5,7 @@ import { Redirect } from "react-router-dom";
 import "../styles/LogIn.scss";
 
 const LogIn = () => {
-  window.scroll(0, 0);
+  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 
   const { guest } = useSelector((state) => state.log_in);
 
