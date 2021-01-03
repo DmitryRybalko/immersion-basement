@@ -1,8 +1,11 @@
 import "../styles/footer.scss";
 import svg from "../svg/TMDB.svg";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Footer = () => {
+  const { guestLogged } = useSelector((state) => state.log_in);
+
   return (
     <footer>
       <div className="footer-nav">
@@ -17,7 +20,11 @@ const Footer = () => {
             <Link to="/ShowsPage">TV Shows</Link>
           </li>
           <li>
-            <Link to="/LogIn">Log In</Link>
+            {guestLogged === true ? (
+              <Link to="/Guest">Profile</Link>
+            ) : (
+              <Link to="/LogIn">Log In</Link>
+            )}
           </li>
         </ul>
       </div>

@@ -5,6 +5,7 @@ import "../styles/details.scss";
 import StarRating from "./StarRating";
 import Trailer from "./Trailer";
 import ScrollContainer from "react-indiana-drag-scroll";
+import Header from "./Header";
 
 const ShowDetails = () => {
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -44,13 +45,11 @@ const ShowDetails = () => {
       </section>
       <section className="synopsis-container">
         <div className="immersion-data-container">
-          <h2 className="overview">あらすじ</h2>
-          <p>{tvShow.overview}</p>
+          <Header text={"あらすじ"} />
+          {tvShow.overview ? <p>{tvShow.overview}</p> : <p>あらすじなし</p>}
         </div>
         <div className="immersion-data-container">
-          <div className="data">
-            <h2>トレーラー</h2>
-          </div>
+          <Header text={"トレーラー"} />
           <ScrollContainer className="trailer-carousel">
             {show_trailers.results && show_trailers.results.length > 0 ? (
               show_trailers.results.map((trailer) => (
@@ -65,9 +64,7 @@ const ShowDetails = () => {
           </ScrollContainer>
         </div>
         <div className="immersion-data-container">
-          <div className="data">
-            <h2>レビュー</h2>
-          </div>
+          <Header text={"レビュー"} />
           {show_reviews.results && show_reviews.results.length > 0 ? (
             show_reviews.results.map((review) => (
               <div key={review.url} className="review-container">

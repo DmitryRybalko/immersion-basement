@@ -17,6 +17,7 @@ const Navbar = () => {
   };
 
   const { searched } = useSelector((state) => state.immersion);
+  const { guestLogged } = useSelector((state) => state.log_in);
 
   return (
     <header>
@@ -51,7 +52,11 @@ const Navbar = () => {
             <Link to="/ShowsPage">TV Shows</Link>
           </li>
           <li className="user">
-            <Link to="/LogIn">Log In</Link>
+            {guestLogged === true ? (
+              <Link to="/Guest">Profile</Link>
+            ) : (
+              <Link to="/LogIn">Log In</Link>
+            )}
           </li>
         </ul>
       </nav>

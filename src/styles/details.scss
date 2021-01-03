@@ -56,7 +56,6 @@
     transition: color 100ms;
     font-size: 1.5rem;
     margin-top: 0.85rem;
-    //margin-left: 0.3rem;
   }
 
   .stars-container {
@@ -92,19 +91,6 @@
       padding: 4rem;
       font-size: 1.4rem;
       width: 85%;
-      //margin-bottom: 3rem;
-    }
-    .data {
-      margin-bottom: 3rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.1rem;
-      //margin-bottom: 5rem;
-      width: 12rem;
-      color: #fff;
-      background-color: #222;
-      //clip-path: polygon(0 0, 100% 0%, 90% 31%, 0 31%);
     }
   }
 }
@@ -113,6 +99,5 @@
   justify-content: center;
   display: flex;
   width: 100%;
-  //overflow-y: hidden;
   overflow-x: scroll;
 }
