@@ -19,11 +19,8 @@ export const showDetailsURL = (show_id) =>
   `${baseUrl}/tv/${show_id}?api_key=${process.env.REACT_APP_MOVIEDB_API}&language=ja`;
 export const searchedURL = (searchTerm, currentPage) =>
   `${baseUrl}/search/tv?api_key=${process.env.REACT_APP_MOVIEDB_API}&original_language=ja&query=${searchTerm}&page=${currentPage}&include_adult=false`;
-//export const logInURL = () => `${baseUrl}/authentication/token/validate_with_login?api_key=${process.env.REACT_APP_MOVIEDB_API}`;
-//export const guestSessionURL = () => `${baseUrl}/authentication/guest_session/new?api_key=${process.env.REACT_APP_MOVIEDB_API}`;
 export const getTokenURL = () =>
   `${baseUrl}/authentication/token/new?api_key=${process.env.REACT_APP_MOVIEDB_API}`;
-//export const authGuestURL = (token) => `https://www.themoviedb.org/authenticate/${token}`;
 export const authGuestURL = () =>
   `${baseUrl}/authentication/guest_session/new?api_key=${process.env.REACT_APP_MOVIEDB_API}`;
 export const getMovieTrailers = (movie_id) =>
@@ -36,7 +33,5 @@ export const getShowReviews = (show_id) =>
   `${baseUrl}/tv/${show_id}/reviews?api_key=${process.env.REACT_APP_MOVIEDB_API}&language=ja&page=1`;
 export const logOutURL = () =>
   `${baseUrl}/authentication/session?api_key=${process.env.REACT_APP_MOVIEDB_API}`;
-//en-US
-//https://api.themoviedb.org/3/movie/597094/videos?api_key=05f82c4eb41cf7d38ea497c73e0da404&language=en-US
-//https://api.themoviedb.org/3/authentication/guest_session/new?api_key=05f82c4eb41cf7d38ea497c73e0da404
-// /search/multi?api_key=05f82c4eb41cf7d38ea497c73e0da404&language=en-US&query=dragon%20ball&page=1&include_adult=false
+export const logInURL = (REQUEST_TOKEN) =>
+  `https://www.themoviedb.org/authenticate/${REQUEST_TOKEN}`;

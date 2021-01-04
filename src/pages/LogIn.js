@@ -3,11 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { logInAct, GuestAuth } from "../redux/actions/LogInAction";
 import { Redirect } from "react-router-dom";
 import "../styles/LogIn.scss";
+import { logInURL } from "../util";
 
 const LogIn = () => {
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 
-  const { guest } = useSelector((state) => state.log_in);
+  const { guest, token } = useSelector((state) => state.log_in);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -16,6 +17,10 @@ const LogIn = () => {
 
   const guestHandler = () => {
     dispatch(GuestAuth());
+  };
+
+  const logInHandler = () => {
+    window.location.href = `${logInURL(token)}`;
   };
 
   return (
@@ -33,7 +38,7 @@ const LogIn = () => {
           <p>Immersion Basement</p>
         </div>
         <div className="buttons-LogIn-container">
-          <button>Log In</button>
+          <button onClick={logInHandler}>Log In</button>
           <button onClick={guestHandler}>Browse as Guest</button>
         </div>
         <div className="about-guest">
