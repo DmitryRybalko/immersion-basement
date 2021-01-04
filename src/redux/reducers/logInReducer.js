@@ -7,11 +7,12 @@ const initState = {
 
 const logInReducer = (state = initState, action) => {
   switch (action.type) {
-    //case "LOG_IN":
-    //return{
-    //  ...state,
-    //logged_in: action.payload.logged_in,
-    // }
+    case "LOG_OUT":
+      return {
+        ...state,
+        guestLogged: action.payload.guestLogged,
+        guest: action.payload.guest,
+      };
     case "GUEST_TOKEN":
       return {
         ...state,
