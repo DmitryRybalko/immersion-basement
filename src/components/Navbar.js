@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Redirect, Link } from "react-router-dom";
 import { fetchSearched } from "../redux/actions/immersionAction";
 import { useDispatch, useSelector } from "react-redux";
+import { FaBars } from "react-icons/fa";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -19,11 +20,19 @@ const Navbar = () => {
   const { searched } = useSelector((state) => state.immersion);
   const { guestLogged } = useSelector((state) => state.log_in);
 
+  //const [isActive, setActive] = useState(false);
+  //
+  //const toggleNavbar = () => {
+  //  setActive(!isActive);
+  //};
+
   return (
     <header>
-      <Link to="/" className="logo">
-        Immersion Basement
-      </Link>
+      <div className="logo">
+        <Link to="/" className="logo-link">
+          Immersion Basement
+        </Link>
+      </div>
       <form className="search" action="">
         <input
           value={textInput}
@@ -43,8 +52,8 @@ const Navbar = () => {
           }}
         />
       )}
-      <nav className="Navbar">
-        <ul>
+      <nav className="navbar">
+        <ul className="nav-links">
           <li>
             <Link to="/MoviesPage">Movies</Link>
           </li>
@@ -60,6 +69,9 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
+      <button className="hamburger" id="hamburger">
+        <FaBars />
+      </button>
     </header>
   );
 };

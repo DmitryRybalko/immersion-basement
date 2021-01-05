@@ -1,35 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap");
 
 header {
-  font-size: 1.2rem;
-  background-color: #222;
-  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 2rem 2rem 2rem;
-  ul {
-    flex-wrap: wrap;
-    width: fit-content;
-    font-weight: lighter;
-    list-style: none;
-    display: flex;
-    li {
-      padding-right: 50px;
+  height: 7.5rem;
+  background-color: #222;
+  font-size: 1.25rem;
+  .navbar {
+    width: 25rem;
+    .nav-links {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      padding-right: 3.125rem;
     }
-    a {
-      text-decoration: none;
-      color: white;
-    }
+  }
+  a {
+    text-decoration: none;
+    color: #fff;
   }
 }
 
-.logo {
+.logo-link {
   font-family: "Oswald", sans-serif;
-  font-size: 1.5rem;
-  margin-left: 6rem;
+  font-size: 1.85rem;
+  padding-left: 8rem;
   text-decoration: none;
-  color: white;
+  color: #fff;
 }
 
 input {
@@ -57,5 +55,48 @@ input {
   color: #fff;
   &:hover {
     box-shadow: 0 0 7px #fff, 0 0 7px #fff, 0 0 7px #fff;
+  }
+}
+
+.hamburger {
+  display: none;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  padding-top: 0.62rem;
+  padding-right: 2.5rem;
+
+  outline: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1400px) {
+  .hamburger {
+    display: block;
+    font-size: 2.5rem;
+  }
+  .search {
+    display: none;
+  }
+  .navbar {
+    display: none;
+  }
+  .logo-link {
+    padding-left: 2.5rem;
+    font-size: 2.1rem;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+}
+
+@media screen and (max-width: 735px) {
+  .hamburger {
+    display: block;
+    font-size: 2.3rem;
+  }
+  .logo-link {
+    padding-left: 3rem;
+    font-size: 1.7rem;
   }
 }
