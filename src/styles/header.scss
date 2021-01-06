@@ -3,8 +3,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.1rem;
+  font-size: 1rem;
   width: 12rem;
   color: #fff;
   background-color: #222;
+}
+
+@media screen and (max-width: 610px) {
+  .data {
+    font-size: 0.8rem;
+    width: 10rem;
+  }
 }

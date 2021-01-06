@@ -73,6 +73,7 @@ input {
   .hamburger {
     display: block;
     font-size: 2.1rem;
+    padding-right: 2.5rem;
   }
   .search {
     display: none;
@@ -82,8 +83,7 @@ input {
     display: none;
   }
   .logo-link {
-    padding-left: 1.15rem;
-    font-size: 1.9rem;
+    padding-left: 3rem;
   }
 }
 
@@ -91,17 +91,21 @@ input {
   .hamburger {
     display: block;
     font-size: 2rem;
+    padding-right: 1.5rem;
   }
   .logo-link {
+    padding-left: 1.5rem;
     font-size: 1.4rem;
   }
 }
 @media screen and (max-width: 280px) {
   .hamburger {
     display: block;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    padding-right: 1rem;
   }
   .logo-link {
     font-size: 1.2rem;
+    padding-left: 1rem;
   }
 }

@@ -1,3 +1,25 @@
 .trailer {
   margin: 0.6rem 1rem 0 0.8rem;
+  width: 400px;
+  height: 300px;
+}
+
+@media screen and (max-width: 950px) {
+  .trailer {
+    width: 350px;
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .trailer {
+    width: 320px;
+    height: 220px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .trailer {
+    width: 280px;
+    height: 180px;
+  }
 }
