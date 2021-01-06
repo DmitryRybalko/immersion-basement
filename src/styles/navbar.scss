@@ -64,7 +64,7 @@ input {
   border: none;
   color: #fff;
   padding-top: 0.62rem;
-  padding-right: 2rem;
+  padding-right: 1.9rem;
   outline: none;
   cursor: pointer;
 }
@@ -72,7 +72,7 @@ input {
 @media screen and (max-width: 1400px) {
   .hamburger {
     display: block;
-    font-size: 2.5rem;
+    font-size: 2.1rem;
   }
   .search {
     display: none;
@@ -83,11 +83,8 @@ input {
   }
   .logo-link {
     padding-left: 1.15rem;
-    font-size: 2.1rem;
+    font-size: 1.9rem;
   }
-}
-
-@media screen and (max-width: 1150px) {
 }
 
 @media screen and (max-width: 735px) {
@@ -97,5 +94,14 @@ input {
   }
   .logo-link {
     font-size: 1.4rem;
+  }
+}
+@media screen and (max-width: 280px) {
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+  }
+  .logo-link {
+    font-size: 1.2rem;
   }
 }

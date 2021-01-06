@@ -1,4 +1,4 @@
-.showcase {
+/*.showcase {
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(4, 17rem);
@@ -21,5 +21,77 @@
         background-color: #4c4c4c;
       }
     }
+  }
+}
+*/
+.showcase {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4, 17rem);
+  margin-top: 8rem;
+  row-gap: 2rem;
+}
+.buttons-container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, 11rem);
+  margin-left: 1.5rem;
+  button {
+    background-color: #222;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid black;
+    margin-top: 5.5rem;
+    height: 3.3rem;
+    width: 9rem;
+    font-size: 1.3rem;
+    &:hover {
+      background-color: #4c4c4c;
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .showcase {
+    grid-template-columns: repeat(3, 17rem);
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .showcase {
+    margin-top: 2rem;
+    grid-template-columns: repeat(3, 11rem);
+  }
+}
+@media screen and (max-width: 540px) {
+  .showcase {
+    margin-top: 2rem;
+    grid-template-columns: repeat(2, 11rem);
+  }
+}
+@media screen and (max-width: 320px) {
+  .showcase {
+    margin-top: 2rem;
+    grid-template-columns: repeat(2, 10rem);
+  }
+  .buttons-container {
+    grid-template-columns: repeat(2, 9rem);
+    margin-left: 1.6rem;
+    button {
+      margin-top: 3.5rem;
+      height: 3.3rem;
+      width: 7.5rem;
+      font-size: 1.3rem;
+    }
+  }
+}
+@media screen and (max-width: 280px) {
+  .showcase {
+    margin-top: 2rem;
+    grid-template-columns: repeat(2, 9rem);
+  }
+  .buttons-container {
+    grid-template-columns: repeat(2, 8.5rem);
+    margin-left: 1.6rem;
   }
 }

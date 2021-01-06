@@ -38,11 +38,11 @@ const ShowsPage = () => {
             id={ptv.id}
           />
         ))}
-        <div className="buttons-container">
-          <button onClick={() => nextPage("Back")}>Back</button>
-          <button onClick={() => nextPage("Next")}>Next</button>
-        </div>
       </section>
+      <div className="buttons-container">
+        <button onClick={() => nextPage("Back")}>Back</button>
+        <button onClick={() => nextPage("Next")}>Next</button>
+      </div>
     </>
   );
 };
