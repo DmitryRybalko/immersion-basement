@@ -51,7 +51,7 @@ input {
   height: 2.9rem;
   width: 5rem;
   outline: none;
-  background: #393939;
+  background: #86943d;
   color: #fff;
   &:hover {
     box-shadow: 0 0 7px #fff, 0 0 7px #fff, 0 0 7px #fff;
@@ -78,6 +78,7 @@ input {
   .search {
     display: none;
   }
+
   .navbar {
     display: none;
   }
@@ -93,10 +94,9 @@ input {
 @media screen and (max-width: 735px) {
   .hamburger {
     display: block;
-    font-size: 2.3rem;
+    font-size: 2.1rem;
   }
   .logo-link {
-    padding-left: 3rem;
     font-size: 1.7rem;
   }
 }
