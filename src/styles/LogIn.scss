@@ -1,4 +1,4 @@
-.logIn-container {
+/*.logIn-container {
   margin-top: 16.5rem;
   display: flex;
   align-items: center;
@@ -32,6 +32,100 @@
       font-size: 1.3rem;
       &:hover {
         background-color: #4c4c4c;
+      }
+    }
+  }
+}
+*/
+
+.logIn-container {
+  background-color: #ecebe8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+  .LogIn-title {
+    font-family: "Oswald", sans-serif;
+    font-size: 4.5rem;
+    padding-bottom: 1rem;
+  }
+  .buttons-LogIn-container {
+    height: 17rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    button {
+      background-color: #222;
+      color: #fff;
+      cursor: pointer;
+      border: 1px solid black;
+      border-radius: 2.5rem;
+      outline: none;
+      height: 4rem;
+      width: 14rem;
+      font-size: 1.3rem;
+      &:hover {
+        background-color: #4c4c4c;
+      }
+    }
+  }
+  .about-guest {
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .logIn-container {
+    .LogIn-title {
+      font-size: 4.2rem;
+    }
+    .buttons-LogIn-container {
+      button {
+        height: 4.2rem;
+        width: 14rem;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 735px) {
+  .logIn-container {
+    .LogIn-title {
+      font-size: 2.18rem;
+    }
+    .buttons-LogIn-container {
+      button {
+        height: 3.4rem;
+        width: 10.8rem;
+        font-size: 1.1rem;
+      }
+    }
+    .about-guest {
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: 310px) {
+  .logIn-container {
+    .LogIn-title {
+      font-size: 1.9rem;
+    }
+    .buttons-LogIn-container {
+      button {
+        height: 3rem;
+        width: 9.5rem;
+        font-size: 1rem;
+      }
+    }
+    .about-guest {
+      p {
+        font-size: 0.85rem;
       }
     }
   }
