@@ -5,9 +5,9 @@
     background: #242423;
     height: 0.2rem;
     margin: 0.5rem 0rem;
-    width: 40%;
+    width: 70rem;
   }
-  h1 {
+  h2 {
     margin: 12rem 0 0.2rem;
     font-size: 2.4rem;
     color: #242423;
@@ -18,5 +18,129 @@
     overflow-y: hidden;
     overflow-x: scroll;
     padding: 0.5rem 0 4rem 0;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .main-container {
+    padding-left: 3rem;
+    margin-bottom: 10rem;
+    .line {
+      background: #242423;
+      height: 0.2rem;
+      margin: 0.5rem 0rem;
+      width: 45rem;
+    }
+    h2 {
+      margin: 12rem 0 0.2rem;
+      font-size: 2.4rem;
+      color: #242423;
+    }
+    .carousel {
+      width: 93%;
+      display: flex;
+      overflow-y: hidden;
+      overflow-x: scroll;
+      padding: 0.5rem 0 4rem 0;
+    }
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .main-container {
+    padding-left: 3rem;
+    margin-bottom: 0rem;
+    .line {
+      background: #242423;
+      height: 0.2rem;
+      margin: 0.5rem 0rem;
+      width: 35rem;
+    }
+    h2 {
+      margin: 5rem 0 0.2rem;
+      font-size: 2rem;
+      color: #242423;
+    }
+    .carousel {
+      width: 93%;
+      display: flex;
+      overflow-y: hidden;
+      overflow-x: scroll;
+      padding: 0.5rem 0 4rem 0;
+    }
+  }
+}
+
+@media screen and (max-width: 735px) {
+  .main-container {
+    padding-left: 1.5rem;
+    margin-bottom: 0rem;
+    .line {
+      background: #242423;
+      height: 0.2rem;
+      margin: 0.5rem 0rem;
+      width: 21.5rem;
+    }
+    h2 {
+      margin: 5rem 0 0.2rem;
+      font-size: 1.8rem;
+      color: #242423;
+    }
+    .carousel {
+      width: 93%;
+      display: flex;
+      overflow-y: hidden;
+      overflow-x: scroll;
+      padding: 0.5rem 0 1rem 0;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .main-container {
+    padding-left: 1.5rem;
+    margin-bottom: 0rem;
+    .line {
+      background: #242423;
+      height: 0.2rem;
+      margin: 0.5rem 0rem;
+      width: 18rem;
+    }
+    h2 {
+      margin: 5rem 0 0.2rem;
+      font-size: 1.6rem;
+      color: #242423;
+    }
+    .carousel {
+      width: 93%;
+      display: flex;
+      overflow-y: hidden;
+      overflow-x: scroll;
+      padding: 0.5rem 0 1rem 0;
+    }
+  }
+}
+@media screen and (max-width: 280px) {
+  .main-container {
+    padding-left: 0.5rem;
+    margin-bottom: 0rem;
+    .line {
+      background: #242423;
+      height: 0.2rem;
+      margin: 0.5rem 0rem;
+      width: 16rem;
+    }
+    h2 {
+      margin: 5rem 0 0.2rem;
+      font-size: 1.3rem;
+      color: #242423;
+    }
+    .carousel {
+      width: 93%;
+      display: flex;
+      overflow-y: hidden;
+      overflow-x: scroll;
+      padding: 0.5rem 0 0.5rem 0;
+    }
   }
 }

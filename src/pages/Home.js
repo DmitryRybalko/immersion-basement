@@ -23,7 +23,7 @@ const Home = () => {
     <>
       <div className="main-container">
         <section className="popular">
-          <h1>People are watching</h1>
+          <h2>People are watching</h2>
           <div className="line"></div>
           <ScrollContainer className="carousel">
             {popularMovies.map((pmov) => (
@@ -37,7 +37,7 @@ const Home = () => {
           </ScrollContainer>
         </section>
         <section className="popular">
-          <h1>Popular shows to watch</h1>
+          <h2>Popular shows to watch</h2>
           <div className="line"></div>
           <ScrollContainer className="carousel">
             {popularTVShows.map((ptv) => (
@@ -51,7 +51,7 @@ const Home = () => {
           </ScrollContainer>
         </section>
         <section className="upcoming">
-          <h1>Upcoming Movies</h1>
+          <h2>Upcoming Movies</h2>
           <div className="line"></div>
           <ScrollContainer className="carousel">
             {upcomingMovies.map((umov) => (
@@ -65,7 +65,7 @@ const Home = () => {
           </ScrollContainer>
         </section>
         <section className="upcoming">
-          <h1>Shows to look forward to</h1>
+          <h2>Shows to look forward to</h2>
           <div className="line"></div>
           <ScrollContainer className="carousel">
             {upcomingTVShows.map((utv) => (
