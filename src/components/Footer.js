@@ -7,19 +7,21 @@ const Footer = () => {
   const { guestLogged } = useSelector((state) => state.log_in);
 
   return (
-    <footer>
-      <div className="footer-nav">
-        <Link to="/" className="logo-footer">
-          Immersion Basement
-        </Link>
-        <ul>
+    <footer className="footer">
+      <div className="footer__nav-wrapper">
+        <ul className="footer__nav">
           <li>
+            <Link to="/" className="logo-footer">
+              Immersion Basement
+            </Link>
+          </li>
+          <li className="footer__nav__item">
             <Link to="/MoviesPage">Movies</Link>
           </li>
-          <li>
+          <li className="footer__nav__item">
             <Link to="/ShowsPage">TV Shows</Link>
           </li>
-          <li>
+          <li className="footer__nav__item">
             {guestLogged === true ? (
               <Link to="/Guest">Profile</Link>
             ) : (
@@ -27,17 +29,14 @@ const Footer = () => {
             )}
           </li>
         </ul>
+        <div className="portfolio-links">
+          <p className="portfolio-links__item">
+            Portfolio <a href="/">Coming Soon</a>
+          </p>
+        </div>
       </div>
       <div className="svg-container">
         <img className="svg" src={svg} alt="TMDB" />
-      </div>
-      <div className="placeholder">
-        <p>
-          Portfolio <a href="/">Coming Soon</a>
-        </p>
-        <p>
-          Code and design by <a href="/">Dmitry Rybalko</a>
-        </p>
       </div>
     </footer>
   );

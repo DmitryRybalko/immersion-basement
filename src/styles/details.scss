@@ -1,6 +1,9 @@
 .background-container {
   display: flex;
   align-items: center;
+  height: 89vh;
+  background-position: center;
+  background-size: cover;
 }
 .info-container {
   display: flex;
@@ -96,18 +99,13 @@
 }
 
 .trailer-carousel {
-  justify-content: center;
-  display: flex;
   width: 100%;
+  display: flex;
   overflow-x: scroll;
-}
-
-@media screen and (max-width: 1400px) {
+  justify-content: center;
 }
 
 @media screen and (max-width: 1250px) {
-  .background-container {
-  }
   .info-container {
     margin-left: 2.5rem;
     .info-poster {
@@ -152,8 +150,6 @@
 }
 
 @media screen and (max-width: 610px) {
-  .background-container {
-  }
   .info-container {
     margin-left: 1rem;
     .info-poster {

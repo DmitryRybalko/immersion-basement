@@ -3,6 +3,7 @@ import { Redirect, Link } from "react-router-dom";
 import { fetchSearched } from "../redux/actions/immersionAction";
 import { useDispatch, useSelector } from "react-redux";
 import { FaBars } from "react-icons/fa";
+import { MdClose } from "react-icons/md";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -20,27 +21,32 @@ const Navbar = () => {
   const { searched } = useSelector((state) => state.immersion);
   const { guestLogged } = useSelector((state) => state.log_in);
 
-  //const [isActive, setActive] = useState(false);
-  //
-  //const toggleNavbar = () => {
-  //  setActive(!isActive);
-  //};
+  const [isActive, setActive] = useState(false);
+
+  const toggleNavbar = () => {
+    setActive(!isActive);
+    console.log("clicked");
+  };
 
   return (
-    <header>
-      <div className="logo">
-        <Link to="/" className="logo-link">
+    <header className="header">
+      <div className="header__logo-container">
+        <Link to="/" className="header__logo-link">
           Immersion Basement
         </Link>
       </div>
-      <form className="search" action="">
+      <form className="header__search header__search-mobile" action="">
         <input
           value={textInput}
           onChange={inputHandler}
           type="text"
           placeholder="search..."
         />
-        <button className="search-button" onClick={submitSearch} type="submit">
+        <button
+          className="header__search-button"
+          onClick={submitSearch}
+          type="submit"
+        >
           Search
         </button>
       </form>
@@ -52,8 +58,8 @@ const Navbar = () => {
           }}
         />
       )}
-      <nav className="navbar">
-        <ul className="nav-links">
+      <nav className="header__navbar navbar">
+        <ul className="nav-links ">
           <li>
             <Link to="/MoviesPage">Movies</Link>
           </li>
@@ -69,8 +75,8 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-      <button className="hamburger" id="hamburger">
-        <FaBars />
+      <button onClick={toggleNavbar} className="hamburger" id="hamburger">
+        {isActive ? <MdClose /> : <FaBars />}
       </button>
     </header>
   );

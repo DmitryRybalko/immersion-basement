@@ -1,28 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap");
 
-header {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 7.5rem;
   background-color: #222;
   font-size: 1.25rem;
-  .navbar {
-    width: 25rem;
-    .nav-links {
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      padding-right: 3.125rem;
-    }
-  }
-  a {
-    text-decoration: none;
-    color: #fff;
-  }
 }
 
-.logo-link {
+.navbar {
+  width: 25rem;
+  .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 3.125rem;
+  }
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.header__logo-link {
   font-family: "Oswald", sans-serif;
   font-size: 1.85rem;
   padding-left: 8rem;
@@ -40,7 +41,7 @@ input {
   outline: none;
 }
 
-.search-button {
+.header__search-button {
   padding-top: -0.7rem;
   margin-left: -5rem;
   font-weight: bold;
@@ -75,14 +76,25 @@ input {
     font-size: 2.1rem;
     padding-right: 2.5rem;
   }
-  .search {
+  .header__search {
     display: none;
   }
 
   .navbar {
     display: none;
+    //position: absolute;
+    //right: 0rem;
+    //top: 7.5rem;
+    //height: 100vh;
+    //width: 100%;
+    //background-color: #000;
+    //display: flex;
+    //justify-content: space-around;
+    //align-items: center;
+    //flex-direction: column;
   }
-  .logo-link {
+
+  .header__logo-link {
     padding-left: 3rem;
   }
 }
@@ -93,7 +105,7 @@ input {
     font-size: 2rem;
     padding-right: 1.5rem;
   }
-  .logo-link {
+  .header__logo-link {
     padding-left: 1.5rem;
     font-size: 1.4rem;
   }
@@ -104,7 +116,7 @@ input {
     font-size: 1.5rem;
     padding-right: 1rem;
   }
-  .logo-link {
+  .header__logo-link {
     font-size: 1.2rem;
     padding-left: 1rem;
   }
