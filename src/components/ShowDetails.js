@@ -6,6 +6,7 @@ import StarRating from "./StarRating";
 import Trailer from "./Trailer";
 import ScrollContainer from "react-indiana-drag-scroll";
 import Header from "./Header";
+import Favorite from "../components/Favorite";
 
 const ShowDetails = () => {
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -43,6 +44,7 @@ const ShowDetails = () => {
                 <p className="attention">Please Log in to rate</p>
               )}
             </div>
+            <div>{guestLogged === true ? <Favorite /> : ""}</div>
           </div>
         </div>
       </section>

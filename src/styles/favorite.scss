@@ -1,0 +1,14 @@
+.icon-favorite {
+  font-size: 2.4rem;
+  margin-top: 1.5rem;
+  margin-left: 0.8rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 610px) {
+  .icon-favorite {
+    font-size: 1.8rem;
+    margin-top: 1.5rem;
+    margin-left: 0.4rem;
+  }
+}

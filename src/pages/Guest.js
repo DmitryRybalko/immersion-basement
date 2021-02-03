@@ -4,9 +4,11 @@ import { Redirect } from "react-router-dom";
 import "../styles/guest.scss";
 import { ImEye, ImEyePlus, ImEyeBlocked } from "react-icons/im";
 import { AiFillStar } from "react-icons/ai";
+import { GrFavorite } from "react-icons/gr";
 import { CgProfile } from "react-icons/cg";
 import Header from "../components/Header";
 import { logOutAct } from "../redux/actions/LogOutAction";
+import Favorite from "../components/Favorite";
 //import { logInAct } from "../redux/actions/LogInAction";
 
 const Guest = () => {
@@ -39,7 +41,7 @@ const Guest = () => {
           <div className="icons-wrapper">
             <div className="icon">
               <p>
-                <ImEye className="list-icon" />
+                <Favorite />
               </p>
             </div>
             <div className="icon">
