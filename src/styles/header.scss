@@ -1,12 +1,14 @@
 .data {
+  margin-top: 3rem;
   margin-bottom: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
-  width: 12rem;
+  width: 13.4rem;
   color: #fff;
   background-color: #222;
+  padding: 1rem;
 }
 
 @media screen and (max-width: 610px) {

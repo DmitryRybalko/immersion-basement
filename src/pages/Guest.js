@@ -2,14 +2,9 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
 import "../styles/guest.scss";
-import { ImEye, ImEyePlus, ImEyeBlocked } from "react-icons/im";
-import { AiFillStar } from "react-icons/ai";
-import { GrFavorite } from "react-icons/gr";
 import { CgProfile } from "react-icons/cg";
 import Header from "../components/Header";
 import { logOutAct } from "../redux/actions/LogOutAction";
-import Favorite from "../components/Favorite";
-//import { logInAct } from "../redux/actions/LogInAction";
 
 const Guest = () => {
   const dispatch = useDispatch();
@@ -28,46 +23,24 @@ const Guest = () => {
         />
       )}
       <div className="guest-container">
-        <section className="guest-info">
-          <div className="pp-container">
+        <section className="guest">
+          <div className="guest__profile-picture">
             <CgProfile className="profile-picture" />
           </div>
-          <p>Guest</p>
+          <p className="welcome_text">Welcome, Guest</p>
           <button onClick={logOutHandler} className="log-out-button">
             Log out
           </button>
         </section>
-        <section className="guest-immersion">
-          <div className="icons-wrapper">
-            <div className="icon">
-              <p>
-                <Favorite />
-              </p>
-            </div>
-            <div className="icon">
-              <p>
-                <ImEyePlus className="list-icon" />
-              </p>
-            </div>
-            <div className="icon">
-              <p>
-                <ImEyeBlocked className="list-icon" />
-              </p>
-            </div>
-            <div className="icon">
-              <p>
-                <AiFillStar className="list-icon" />
-              </p>
-            </div>
-          </div>
-          <div className="lists-wrapper">
-            <Header text={"Watching"} />
+        <section className="guest__lists">
+          <div className="guest__lists-wrapper">
+            <Header text={"Rated Shows"} />
             <p>0</p>
-            <Header text={"Plan to watch"} />
+            <Header text={"Rated Movies"} />
             <p>0</p>
-            <Header text={"Ignore"} />
+            <Header text={"Favorite Shows"} />
             <p>0</p>
-            <Header text={"Rated"} />
+            <Header text={"Favorite Movies"} />
             <p>0</p>
           </div>
         </section>
