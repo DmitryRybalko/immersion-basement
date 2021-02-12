@@ -6,16 +6,29 @@
   align-items: center;
   height: 7.5rem;
   background-color: #222;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
 }
 
 .navbar {
-  width: 25rem;
+  width: 59%;
+  display: flex;
+  align-items: center;
   .nav-links {
+    width: 100%;
     list-style: none;
     display: flex;
     justify-content: space-between;
-    padding-right: 3.125rem;
+    align-items: center;
+    .nav_links_links {
+      width: 24rem;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      li {
+        padding-left: 2.4rem;
+      }
+    }
   }
 }
 a {
@@ -42,8 +55,7 @@ input {
 }
 
 .header__search-button {
-  padding-top: -0.7rem;
-  margin-left: -5rem;
+  margin-left: -4.9rem;
   font-weight: bold;
   border: none;
   border-radius: 2.5rem;
@@ -76,22 +88,39 @@ input {
     font-size: 2.1rem;
     padding-right: 2.5rem;
   }
-  .header__search {
-    display: none;
-  }
 
   .navbar {
-    display: none;
-    //position: absolute;
-    //right: 0rem;
-    //top: 7.5rem;
-    //height: 100vh;
-    //width: 100%;
-    //background-color: #000;
-    //display: flex;
-    //justify-content: space-around;
-    //align-items: center;
-    //flex-direction: column;
+    position: absolute;
+    right: -100vw;
+    top: 7.5rem;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #000;
+    transition: right 0.4s ease-in;
+    display: flex;
+    flex-direction: column;
+    .nav-links {
+      margin-top: 7rem;
+      padding-right: 0rem;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      li {
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+      }
+    }
+    .nav_links_links {
+      flex-direction: column;
+      align-items: center;
+      li {
+        padding-right: 2rem;
+      }
+    }
+  }
+
+  .show {
+    right: 0;
   }
 
   .header__logo-link {
@@ -110,6 +139,19 @@ input {
     font-size: 1.4rem;
   }
 }
+
+@media screen and (max-width: 411px) {
+  input {
+    width: 20rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  input {
+    width: 15rem;
+  }
+}
+
 @media screen and (max-width: 280px) {
   .hamburger {
     display: block;

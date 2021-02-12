@@ -37,7 +37,7 @@ const ShowDetails = () => {
                 ))}
             </div>
             <div className="rating">
-              <p>{tvShow.vote_average}</p>
+              <p className="rating__number">{tvShow.vote_average}</p>
               {guestLogged === true ? (
                 <StarRating />
               ) : (

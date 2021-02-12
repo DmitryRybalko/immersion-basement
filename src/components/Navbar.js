@@ -35,43 +35,52 @@ const Navbar = () => {
           Immersion Basement
         </Link>
       </div>
-      <form className="header__search header__search-mobile" action="">
-        <input
-          value={textInput}
-          onChange={inputHandler}
-          type="text"
-          placeholder="search..."
-        />
-        <button
-          className="header__search-button"
-          onClick={submitSearch}
-          type="submit"
-        >
-          Search
-        </button>
-      </form>
-      {searched.length > 0 && (
-        <Redirect
-          to={{
-            pathname: "/SearchResults",
-            state: searched,
-          }}
-        />
-      )}
-      <nav className="header__navbar navbar">
-        <ul className="nav-links ">
-          <li>
-            <Link to="/MoviesPage">Movies</Link>
-          </li>
-          <li>
-            <Link to="/ShowsPage">TV Shows</Link>
-          </li>
-          <li className="user">
-            {guestLogged === true ? (
-              <Link to="/Guest">Profile</Link>
-            ) : (
-              <Link to="/LogIn">Log In</Link>
+
+      <nav className={`header__navbar navbar  ${isActive ? "show" : ""}`}>
+        <ul className="nav-links">
+          <li className="li-search">
+            <form className={`header__search header__search-mobile`} action="">
+              <input
+                value={textInput}
+                onChange={inputHandler}
+                type="text"
+                placeholder="search..."
+              />
+              <button
+                className="header__search-button"
+                onClick={submitSearch}
+                type="submit"
+              >
+                Search
+              </button>
+            </form>
+            {searched.length > 0 && (
+              <Redirect
+                to={{
+                  pathname: "/SearchResults",
+                  state: searched,
+                }}
+              />
             )}
+          </li>
+
+          <li>
+            <ul className="nav_links_links">
+              <li>
+                <Link to="/MoviesPage">Movies</Link>
+              </li>
+              <li>
+                <Link to="/ShowsPage">TV Shows</Link>
+              </li>
+              <li className="user">
+                {" "}
+                {guestLogged === true ? (
+                  <Link to="/Guest">Profile</Link>
+                ) : (
+                  <Link to="/LogIn">Log In</Link>
+                )}
+              </li>
+            </ul>
           </li>
         </ul>
       </nav>

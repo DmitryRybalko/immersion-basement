@@ -35,7 +35,7 @@ const MovieDetails = () => {
                 movie.genres.map((genre) => <p key={genre.id}>{genre.name}</p>)}
             </div>
             <div className="rating">
-              <p>{movie.vote_average}</p>
+              <p className="rating__number">{movie.vote_average}</p>
               {guestLogged === true ? (
                 <StarRating />
               ) : (
