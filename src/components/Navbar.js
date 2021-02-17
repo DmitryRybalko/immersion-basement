@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { Redirect, Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Redirect, Link, withRouter } from "react-router-dom";
 import { fetchSearched } from "../redux/actions/immersionAction";
 import { useDispatch, useSelector } from "react-redux";
 import { FaBars } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 
-const Navbar = () => {
+const Navbar = ({ history }) => {
   const dispatch = useDispatch();
   const [textInput, setTextInput] = useState("");
   const inputHandler = (e) => {
@@ -21,11 +21,17 @@ const Navbar = () => {
   const { searched } = useSelector((state) => state.immersion);
   const { guestLogged } = useSelector((state) => state.log_in);
 
+  //state for active/disabled hamburger menu
   const [isActive, setActive] = useState(false);
+  //use effect for page changes
+  useEffect(() => {
+    history.listen(() => {
+      setActive(false);
+    });
+  });
 
   const toggleNavbar = () => {
     setActive(!isActive);
-    console.log("clicked");
   };
 
   return (
@@ -91,4 +97,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default withRouter(Navbar);

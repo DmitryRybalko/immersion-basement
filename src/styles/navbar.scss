@@ -129,6 +129,9 @@ input {
 }
 
 @media screen and (max-width: 735px) {
+  .navbar {
+    min-height: 87vh;
+  }
   .hamburger {
     display: block;
     font-size: 2rem;
