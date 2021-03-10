@@ -1,12 +1,7 @@
 import React from "react";
 import { imgUrl } from "../util";
 import { useSelector } from "react-redux";
-import "../styles/details.scss";
-import StarRating from "./StarRating";
-import Trailer from "./Trailer";
-import ScrollContainer from "react-indiana-drag-scroll";
-import Header from "./Header";
-import Favorite from "../components/Favorite";
+import { ItemDetails } from "./ItemDetails";
 
 const ShowDetails = () => {
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -21,67 +16,13 @@ const ShowDetails = () => {
 
   return (
     <>
-      <section className="background-container" style={sectionStyle}>
-        <div className="info-container">
-          <img
-            className="info-poster"
-            src={`${imgUrl}${tvShow.poster_path}`}
-            alt={tvShow.name}
-          />
-          <div className="info">
-            <h2>{tvShow.name}</h2>
-            <div className="genres">
-              {tvShow.genres &&
-                tvShow.genres.map((genre) => (
-                  <p key={genre.id}>{genre.name}</p>
-                ))}
-            </div>
-            <div className="rating">
-              <p className="rating__number">{tvShow.vote_average}</p>
-              {guestLogged === true ? (
-                <StarRating />
-              ) : (
-                <p className="attention">Please Log in to rate</p>
-              )}
-            </div>
-            <div>{guestLogged === true ? <Favorite /> : ""}</div>
-          </div>
-        </div>
-      </section>
-      <section className="synopsis-container">
-        <div className="immersion-data-container">
-          <Header text={"あらすじ"} />
-          {tvShow.overview ? <p>{tvShow.overview}</p> : <p>あらすじなし</p>}
-        </div>
-        <div className="immersion-data-container">
-          <Header text={"トレーラー"} />
-          <ScrollContainer className="trailer-carousel">
-            {show_trailers.results && show_trailers.results.length > 0 ? (
-              show_trailers.results.map((trailer) => (
-                <Trailer
-                  key={trailer.key}
-                  src={`https://www.youtube.com/embed/${trailer.key}`}
-                />
-              ))
-            ) : (
-              <p>トレーラーなし</p>
-            )}
-          </ScrollContainer>
-        </div>
-        <div className="immersion-data-container">
-          <Header text={"レビュー"} />
-          {show_reviews.results && show_reviews.results.length > 0 ? (
-            show_reviews.results.map((review) => (
-              <div key={review.url} className="review-container">
-                <h3 key={review.author}>{review.author}</h3>
-                <p key={review.id}>{review.content}</p>
-              </div>
-            ))
-          ) : (
-            <p>レビューなし</p>
-          )}
-        </div>
-      </section>
+      <ItemDetails
+        sectionStyle={sectionStyle}
+        item={tvShow}
+        itemTrailers={show_trailers}
+        itemReviews={show_reviews}
+        logged={guestLogged}
+      />
     </>
   );
 };
